@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Task Details</title>
+	<link th:href="@{/main.css}" rel="stylesheet" />
+</head>
+
+<body>
+	<main>
+		<h2>Task Details</h2>
+		<p>Description: <span th:text="${task.description}"></span></p>
+		<p>Status: <span th:text="${task.status} ? 'Completed' : 'Incomplete'"></span></p>
+		<form th:action="@{/tasks/complete}" method="post">
+			<button type="submit">Mark as Complete</button>
+		</form>
+	</main>
+</body>
+
+</html>
